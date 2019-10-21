@@ -1,0 +1,28 @@
+#include<algorithm>
+
+permutation operation 
+            
+        is_permutation(v1.begin(), v1.end(), v2.begin())   return type bool
+        Return value
+        true if the range [first1, last1) is a permutation of the range [first2, last2).
+        O(n^2)
+
+        next_permutation(s.begin(), s.end())
+        Return value
+        true if the new permutation is lexicographically greater than the old. 
+        false if the last permutation was reached and the range was reset to the first permutation
+        O(n)
+
+        prev_permutation(s.begin(), s.end())
+        return type
+        true if the new permutation precedes the old in lexicographical order. false if the first permutation was reached and the range was reset to the last permutation.
+        O(n)
+
+HEAP 
+        
+        is_heap(v.begin(), v.end())
+        Return type
+        true if the range is max heap, false otherwise.
+        comlexity   O(n)
+        
+        
