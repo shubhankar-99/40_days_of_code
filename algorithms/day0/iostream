@@ -1,0 +1,19 @@
+#include<iostream>
+
+Includes
+
+<ios>    	(since C++11)
+<streambuf>	(since C++11)
+<istream>	(since C++11)
+<ostream>	(since C++11)
+
+Objects
+
+std::cin	standard input
+std::cout	standard output
+std::cerr	standard error
+std::clog	standard log
+std::wcin	standard input
+std::wcout	standard output
+std::wcerr	standard error
+std::wclog	standard log
