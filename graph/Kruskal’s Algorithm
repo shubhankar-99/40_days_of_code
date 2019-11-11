@@ -1,0 +1,43 @@
+#include<bits/stdc++.h>
+using namespace std;
+typedef long ll;
+ll arr[10005];
+void init(ll n){
+    for(ll i=0;i<=n;i++)
+     arr[i]=i;
+}
+ll parent(ll x){
+    if(x==arr[x])return x;
+    return arr[x]=parent(arr[x]);
+}
+ll fk(ll n,ll m,vector<pair<ll,pair<ll,ll> > > &v){
+   ll ans=0,j=0; 
+   for(auto i=v.begin();i!=v.end()&&j<n;i++){
+      // cout<<i->second.first<<" "<<i->second.second<<" "<<i->first<<"\n";
+       //continue;
+       ll x=i->second.first;
+       ll y=i->second.second;
+       ll w=i->first;
+       ll a=parent(x);
+       ll b=parent(y);
+       if(a!=b){
+           ans+=w;j++;
+           arr[b]=a;
+       }
+      
+   }
+    return ans;
+}
+int main(){
+   ll n,m,i,w,x,y;
+   cin>>n>>m;
+   init(n);
+   vector<pair<ll,pair<ll,ll> > > v; 
+   for(i=0;i<m;i++){
+       cin>>x>>y>>w;
+       v.push_back({w,{x,y}});
+   }
+   sort(v.begin(),v.end());
+   cout<<fk(n,m,v);
+    return 0;
+}
