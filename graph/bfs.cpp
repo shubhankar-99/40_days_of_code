@@ -3,17 +3,17 @@ using namespace std;
 typedef long long ll;
 
 void bfs(ll x,bool vis[],ll level[],vector<vector<ll>> v){ //either v or &v
-  deque<ll> d;
-  d.push_back(x);
+  queue<ll> d;
+  d.push(x);
   while(!d.empty()){
       
     ll k=d.front();
-    d.pop_front();
+    d.pop();
     vis[k]=true;
     for(auto i:v[k]){
      if(vis[i])continue;
      level[i]=1+level[k];
-      d.push_back(i);
+      d.push(i);
      }      
   }
 }
